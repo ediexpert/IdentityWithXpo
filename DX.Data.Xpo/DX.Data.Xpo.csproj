@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>19.1.5.7</Version>
+    <FileVersion>19.1.4.6</FileVersion>
+    <Authors>Don Wibier (DevExpress)</Authors>
+    <Description>Several XPO Related Helper classes</Description>
+    <Copyright>Copyright (c) 2017 Don Wibier</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>    
+    <PackageProjectUrl>https://github.com/donwibier/DXWeb/tree/master/DX.Utils</PackageProjectUrl>
+    <PackageIconUrl>https://www.devexpress.com/favicon.ico</PackageIconUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>DXWeb Wibier DevExpress XPO ORM Microsoft Identity Advantage SQL Anywhere Sybase DB2 Interbase/Firebird MS-Access Oracle Pervasive PostgreSQL SQLite VistaDB MS-SQL MySQL</PackageTags>
+    <PackageReleaseNotes>
+		19.1.5.7: Upgrade to DevExpress v19.1.5 and XPDataStore constructor uses interface types for mapper and validator
+		19.1.4.6: Upgrade to DevExpress v19.1.4
+		19.1.3.8: Fixes on DataMapper implementation
+		19.1.3.6: Upgrade to DevExpress v19.1.3
+		18.2.3.6: Small optimisations and upgrade to DevExpress v18.2.3
+		18.1.4.4: Refactorings to improve speed and support for Pageable (XP)DataStore
+		18.1.4.3: Abstract Generic DTO XPDataStore and XPValidator classes added
+		18.1.4.2: Better exception message on invalid connection string
+		18.1.4.1: Upgrade to DevExpress v18.1.4 and bug fixed on LockoutEndDateUtc.
+		17.2.6.2: Upgrade to DevExpress v17.2.6
+		17.2.5.2: DI Extension methods added and upgrade to DevExpress v17.2.5
+		17.2.4.2: Upgrade to DevExpress v17.2.4 and changed .NET Framework to v4.6.1
+		17.2.3.1: Initial dual mode package for .NET Framework and .NET Standard 2.0
+		Not operational on .NET Standard 2.0 yet
+	</PackageReleaseNotes>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <RepositoryUrl>https://github.com/donwibier/DXWeb</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net461'">
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Data" Version="19.1.7" />
+    <PackageReference Include="DevExpress.Xpo" Version="19.1.7" />    
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DX.Utils\DX.Utils.csproj" />
+  </ItemGroup>
+</Project>

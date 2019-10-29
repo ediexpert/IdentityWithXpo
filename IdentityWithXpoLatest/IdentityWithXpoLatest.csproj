@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Data.19.1.7\lib\net452\DevExpress.Data.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Xpo.19.1.7\lib\net452\DevExpress.Xpo.v19.1.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -251,6 +257,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DX.Data.Xpo.Identity\DX.Data.Xpo.Identity.csproj">
+      <Project>{b91fa292-1bba-41ff-aa09-507a78d7e555}</Project>
+      <Name>DX.Data.Xpo.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DX.Data.Xpo\DX.Data.Xpo.csproj">
+      <Project>{32273420-d032-4b59-8a9b-d1b4bee937d9}</Project>
+      <Name>DX.Data.Xpo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DX.Utils\DX.Utils.csproj">
+      <Project>{6bd94e50-2c71-4cd8-82f3-c14832e3d936}</Project>
+      <Name>DX.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
