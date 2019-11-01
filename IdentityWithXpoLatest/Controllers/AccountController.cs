@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using IdentityWithXpoLatest.Models;
+using System.Security;
 
 namespace IdentityWithXpoLatest.Controllers
 {
@@ -22,7 +23,7 @@ namespace IdentityWithXpoLatest.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -34,9 +35,9 @@ namespace IdentityWithXpoLatest.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -120,7 +121,7 @@ namespace IdentityWithXpoLatest.Controllers
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -155,13 +156,13 @@ namespace IdentityWithXpoLatest.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -421,6 +422,36 @@ namespace IdentityWithXpoLatest.Controllers
             }
 
             base.Dispose(disposing);
+        }
+        [Authorize]
+        public ActionResult ProvideToken()
+        {
+            string purpose = "login";
+            string code = UserManager.GenerateUserToken(purpose, User.Identity.GetUserId());
+            var callbackUrl = Url.Action("UrlAuth", "Account", new { userId = User.Identity.GetUserId(), code = code }, protocol: Request.Url.Scheme);
+            UserManager.SendEmailAsync(User.Identity.GetUserId(), "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+            return Content(null);
+        }
+
+        [AllowAnonymous]
+        public ActionResult UrlAuth(string userId, string code)
+        {
+
+            if (userId == null || code == null)
+            {
+                return View("Error");
+            }
+            var result = UserManager.VerifyUserToken(userId, "login", code);
+            if (result)
+            {
+                var user = UserManager.FindById(userId);
+                SignInManager.SignIn(user, false, false);
+                return RedirectToAction("Index", "Manage");
+            }
+
+            else
+                return Content("Failed");
+
         }
 
         #region Helpers

@@ -12,13 +12,25 @@ using Microsoft.Owin.Security;
 using IdentityWithXpoLatest.Models;
 using DX.Data.Xpo.Identity;
 using DX.Data.Xpo;
+using System.Net.Mail;
+using System.Net;
 
 namespace IdentityWithXpoLatest
 {
+
     public class EmailService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)
         {
+
+            SmtpClient client = new SmtpClient("smtp.mailtrap.io", 25);
+            client.Credentials = new NetworkCredential
+            {
+                UserName = "7efd3d2032b1c8",  // replace with valid value
+                Password = "968ab39c361cbb"  // replace with valid value
+            };
+            client.Send("i.munawer@abona-erp.com", message.Destination, message.Subject, message.Body);
+
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }
