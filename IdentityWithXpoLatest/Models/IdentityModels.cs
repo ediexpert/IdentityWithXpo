@@ -14,6 +14,8 @@ namespace IdentityWithXpoLatest.Models
     {
         public ApplicationUser() { }
 
+        public string ProfilePictureSrcset { get; set; }
+        public string FacebookProfilePage { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -31,6 +33,22 @@ namespace IdentityWithXpoLatest.Models
         public XpoApplicationUser(Session session) : base(session)
         {
         }
+
+        private string _ProfilePictureSrcset;
+        public string ProfilePictureSrcset
+        {
+            get => _ProfilePictureSrcset;
+            set => SetPropertyValue(nameof(ProfilePictureSrcset), ref _ProfilePictureSrcset, value);
+        }
+
+        private string _FacebookProfilePage;
+        public string FacebookProfilePage
+        {
+            get => _FacebookProfilePage;
+            set => SetPropertyValue(nameof(FacebookProfilePage), ref _FacebookProfilePage, value);
+        }
+        //public string FacebookProfilePage { get; set; }
+
         //public override void Assign(object source, int loadingFlags)
         //{
         //	base.Assign(source, loadingFlags);
@@ -49,6 +67,8 @@ namespace IdentityWithXpoLatest.Models
         public override XpoApplicationUser Assign(ApplicationUser source, XpoApplicationUser destination)
         {
             var result = base.Assign(source, destination);
+            result.FacebookProfilePage = source.FacebookProfilePage;
+            result.ProfilePictureSrcset = source.ProfilePictureSrcset;
             return result;
         }
 
