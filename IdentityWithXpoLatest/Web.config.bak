@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" ?><!--
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
   For more information on how to configure your ASP.NET application, please visit
   https://go.microsoft.com/fwlink/?LinkId=301880
   -->
@@ -28,19 +29,16 @@
     <authentication mode="None" />
     <compilation debug="true" targetFramework="4.6.1">
       <assemblies>
-        <add assembly="DevExpress.Data.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Web.ASPxThemes.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.RichEdit.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.RichEdit.v19.2.Export, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Printing.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Web.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Web.Mvc5.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.ASPxThemes.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.RichEdit.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.RichEdit.v19.2.Export, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Printing.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.Mvc5.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
       </assemblies>
     </compilation>
     <httpRuntime targetFramework="4.6.1" maxRequestLength="4096" requestValidationMode="4.0" executionTimeout="110" />
-    <httpModules>
-      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule" />
-    </httpModules>
     <httpHandlers>
       <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DX.ashx" validate="false" />
       <add type="DevExpress.Web.ASPxUploadProgressHttpHandler, DevExpress.Web.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="ASPxUploadProgressHandlerPage.ashx" validate="false" />
@@ -48,7 +46,18 @@
       <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXXRD.axd" validate="false" />
       <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXQB.axd" validate="false" />
     </httpHandlers>
+    <httpModules>
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule" />
+    </httpModules>
+    <globalization culture="" uiCulture="" />
     <pages validateRequest="true" clientIDMode="Predictable">
+      <namespaces>
+        <add namespace="DevExpress.Utils" />
+        <add namespace="DevExpress.Web.ASPxThemes" />
+        <add namespace="DevExpress.Web" />
+        <add namespace="DevExpress.Web.Mvc" />
+        <add namespace="DevExpress.Web.Mvc.UI" />
+      </namespaces>
       <controls>
         <add tagPrefix="dx" namespace="DevExpress.Web" assembly="DevExpress.Web.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add tagPrefix="dx" namespace="DevExpress.Web.ASPxTreeList" assembly="DevExpress.Web.ASPxTreeList.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -62,15 +71,7 @@
         <add tagPrefix="dx" namespace="DevExpress.Web.ASPxSpreadsheet" assembly="DevExpress.Web.ASPxSpreadsheet.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add tagPrefix="dx" namespace="DevExpress.XtraReports.Web" assembly="DevExpress.XtraReports.v19.2.Web.WebForms, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
       </controls>
-      <namespaces>
-        <add namespace="DevExpress.Utils" />
-        <add namespace="DevExpress.Web.ASPxThemes" />
-        <add namespace="DevExpress.Web" />
-        <add namespace="DevExpress.Web.Mvc" />
-        <add namespace="DevExpress.Web.Mvc.UI" />
-      </namespaces>
     </pages>
-    <globalization culture="" uiCulture="" />
   </system.web>
   <system.webServer>
     <modules>
@@ -156,13 +157,13 @@
     </compilers>
   </system.codedom>
   <devExpress>
+    <themes enableThemesAssembly="true" theme="" customThemeAssemblies="" />
+    <compression enableHtmlCompression="false" enableCallbackCompression="true" enableResourceCompression="true" enableResourceMerging="true" />
+    <settings rightToLeft="false" checkReferencesToExternalScripts="true" doctypeMode="Html5" accessibilityCompliant="false" />
+    <errors callbackErrorRedirectUrl="" />
     <resources>
       <add type="ThirdParty" />
     </resources>
-    <themes enableThemesAssembly="true" styleSheetTheme="" theme="" customThemeAssemblies="" />
-    <compression enableHtmlCompression="false" enableCallbackCompression="true" enableResourceCompression="true" enableResourceMerging="true" />
-    <settings doctypeMode="Html5" rightToLeft="false" ieCompatibilityVersion="edge" checkReferencesToExternalScripts="true" accessibilityCompliant="false" />
-    <errors callbackErrorRedirectUrl="" />
   </devExpress>
  
 </configuration>

@@ -51,7 +51,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DevExpress.Xpo" Version="19.1.5" />    
+    <PackageReference Include="DevExpress.Data" Version="19.1.7" />
+    <PackageReference Include="DevExpress.Xpo" Version="19.1.7" />    
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DX.Utils\DX.Utils.csproj" />
