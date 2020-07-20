@@ -1,5 +1,6 @@
 ﻿using DevExpress.Web.Mvc;
 using DevExpress.Xpo;
+using IdentityWithXpoLatest.XPO;
 using System;
 using System.Collections.Generic;
 using System.Linq;

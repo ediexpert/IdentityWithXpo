@@ -45,114 +45,120 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Charts.Core.19.2.4\lib\net452\DevExpress.Charts.v19.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Charts.Core.19.2.7\lib\net452\DevExpress.Charts.v19.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.CodeParser.19.2.4\lib\net452\DevExpress.CodeParser.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.CodeParser.19.2.7\lib\net452\DevExpress.CodeParser.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Data.19.2.4\lib\net452\DevExpress.Data.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Data.19.2.7\lib\net452\DevExpress.Data.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.DataAccess.19.2.4\lib\net452\DevExpress.DataAccess.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.DataAccess.19.2.7\lib\net452\DevExpress.DataAccess.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Images.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Images.19.2.4\lib\net452\DevExpress.Images.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Images.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Images.19.2.7\lib\net452\DevExpress.Images.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Office.Core.19.2.4\lib\net452\DevExpress.Office.v19.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Office.Core.19.2.7\lib\net452\DevExpress.Office.v19.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Pdf.Core.19.2.4\lib\net452\DevExpress.Pdf.v19.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Pdf.Core.19.2.7\lib\net452\DevExpress.Pdf.v19.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.PivotGrid.Core.19.2.4\lib\net452\DevExpress.PivotGrid.v19.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.PivotGrid.Core.19.2.7\lib\net452\DevExpress.PivotGrid.v19.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Printing.Core.19.2.4\lib\net452\DevExpress.Printing.v19.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Printing.Core.19.2.7\lib\net452\DevExpress.Printing.v19.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.RichEdit.Core.19.2.4\lib\net452\DevExpress.RichEdit.v19.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.RichEdit.Core.19.2.7\lib\net452\DevExpress.RichEdit.v19.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.RichEdit.Export.19.2.4\lib\net452\DevExpress.RichEdit.v19.2.Export.dll</HintPath>
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.RichEdit.Export.19.2.7\lib\net452\DevExpress.RichEdit.v19.2.Export.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Sparkline.Core.19.2.4\lib\net452\DevExpress.Sparkline.v19.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Sparkline.Core.19.2.7\lib\net452\DevExpress.Sparkline.v19.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.SpellChecker.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.SpellChecker.Core.19.2.4\lib\net452\DevExpress.SpellChecker.v19.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.SpellChecker.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.SpellChecker.Core.19.2.7\lib\net452\DevExpress.SpellChecker.v19.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Spreadsheet.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Spreadsheet.Core.19.2.4\lib\net452\DevExpress.Spreadsheet.v19.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Spreadsheet.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Spreadsheet.Core.19.2.7\lib\net452\DevExpress.Spreadsheet.v19.2.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Utils.19.2.4\lib\net452\DevExpress.Utils.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Utils.19.2.7\lib\net452\DevExpress.Utils.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Web.ASPxDiagram.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.19.2.4\lib\net452\DevExpress.Web.ASPxDiagram.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.ASPxDiagram.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.19.2.7\lib\net452\DevExpress.Web.ASPxDiagram.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Web.ASPxGantt.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.19.2.4\lib\net452\DevExpress.Web.ASPxGantt.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.ASPxGantt.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.19.2.7\lib\net452\DevExpress.Web.ASPxGantt.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Web.ASPxGauges.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.Visualization.19.2.4\lib\net452\DevExpress.Web.ASPxGauges.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.ASPxGauges.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.Visualization.19.2.7\lib\net452\DevExpress.Web.ASPxGauges.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.19.2.4\lib\net452\DevExpress.Web.ASPxHtmlEditor.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.19.2.7\lib\net452\DevExpress.Web.ASPxHtmlEditor.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Web.ASPxPivotGrid.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.19.2.4\lib\net452\DevExpress.Web.ASPxPivotGrid.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.19.2.7\lib\net452\DevExpress.Web.ASPxPivotGrid.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Web.ASPxRichEdit.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.Office.19.2.4\lib\net452\DevExpress.Web.ASPxRichEdit.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.ASPxRichEdit.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.Office.19.2.7\lib\net452\DevExpress.Web.ASPxRichEdit.v19.2.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Web.ASPxScheduler.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.Scheduler.19.2.4\lib\net452\DevExpress.Web.ASPxScheduler.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.ASPxScheduler.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.Scheduler.19.2.7\lib\net452\DevExpress.Web.ASPxScheduler.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Web.ASPxSpellChecker.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.19.2.4\lib\net452\DevExpress.Web.ASPxSpellChecker.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.19.2.7\lib\net452\DevExpress.Web.ASPxSpellChecker.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Web.ASPxSpreadsheet.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.Office.19.2.4\lib\net452\DevExpress.Web.ASPxSpreadsheet.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.ASPxSpreadsheet.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.Office.19.2.7\lib\net452\DevExpress.Web.ASPxSpreadsheet.v19.2.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Web.ASPxThemes.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxTreeList.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.19.2.4\lib\net452\DevExpress.Web.ASPxTreeList.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.ASPxTreeList.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.19.2.7\lib\net452\DevExpress.Web.ASPxTreeList.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Web.Mvc5.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.Mvc5.19.2.4\lib\net452\DevExpress.Web.Mvc5.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.Mvc5.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.Mvc5.19.2.7\lib\net452\DevExpress.Web.Mvc5.v19.2.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Web.Resources.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.19.2.4\lib\net452\DevExpress.Web.Resources.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.Resources.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.19.2.7\lib\net452\DevExpress.Web.Resources.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Web.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.19.2.4\lib\net452\DevExpress.Web.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Web.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.19.2.7\lib\net452\DevExpress.Web.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Xpo.19.2.4\lib\net452\DevExpress.Xpo.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Xpo.19.2.7\lib\net452\DevExpress.Xpo.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Charts.19.2.4\lib\net452\DevExpress.XtraCharts.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Charts.19.2.7\lib\net452\DevExpress.XtraCharts.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v19.2.Web, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.Visualization.19.2.4\lib\net452\DevExpress.XtraCharts.v19.2.Web.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v19.2.Web, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.Visualization.19.2.7\lib\net452\DevExpress.XtraCharts.v19.2.Web.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Gauges.Core.19.2.4\lib\net452\DevExpress.XtraGauges.v19.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Gauges.Core.19.2.7\lib\net452\DevExpress.XtraGauges.v19.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Reporting.Core.19.2.4\lib\net452\DevExpress.XtraReports.v19.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Reporting.Core.19.2.7\lib\net452\DevExpress.XtraReports.v19.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v19.2.Web, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.Reporting.Common.19.2.4\lib\net452\DevExpress.XtraReports.v19.2.Web.dll</HintPath>
+    <Reference Include="DevExpress.XtraReports.v19.2.Web, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.Reporting.Common.19.2.7\lib\net452\DevExpress.XtraReports.v19.2.Web.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v19.2.Web.WebForms, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Web.Reporting.19.2.4\lib\net452\DevExpress.XtraReports.v19.2.Web.WebForms.dll</HintPath>
+    <Reference Include="DevExpress.XtraReports.v19.2.Web.WebForms, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Web.Reporting.19.2.7\lib\net452\DevExpress.XtraReports.v19.2.Web.WebForms.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Scheduler.Core.19.2.4\lib\net452\DevExpress.XtraScheduler.v19.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Scheduler.Core.19.2.7\lib\net452\DevExpress.XtraScheduler.v19.2.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -221,20 +227,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -277,9 +274,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -287,9 +287,13 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\TestModels.cs" />
+    <Compile Include="Persistent\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\RoleViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="XPO\BaseViewModel.cs" />
     <Compile Include="XPO\BaseXpoController.cs" />
     <Compile Include="XPO\IXpoController.cs" />
@@ -357,10 +361,16 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Employees\_GridViewPartial.cshtml" />
+    <Content Include="Views\User\GridviewPartialPage.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\_GridViewPartial.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\_GridViewPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,11 +1,10 @@
-
 @{
-    var grid = Html.DevExpress().GridView(settings =>
+    var grid = Html.DevExpress().GridView<IdentityWithXpoLatest.ViewModels.UserViewModel>(settings =>
     {
         settings.Name = "GridView";
         settings.CallbackRouteValues = new { Controller = "User", Action = "GridViewPartial" };
 
-        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "User", Action = "GridViewPartialAddNew" };
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "User", Action = "GridViewPartialUpdate" };
         settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "User", Action = "GridViewPartialUpdate" };
         settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "User", Action = "GridViewPartialDelete" };
         settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
@@ -16,7 +15,7 @@
         settings.CommandColumn.ShowDeleteButton = true;
         settings.CommandColumn.ShowEditButton = true;
 
-        settings.KeyFieldName = "ID";
+        settings.KeyFieldName = "Email";
 
         settings.SettingsPager.Visible = true;
         settings.Settings.ShowGroupPanel = true;
@@ -29,9 +28,34 @@
         settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
         settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
 
-        settings.Columns.Add("UserName");
-        settings.Columns.Add("Email");
-        settings.Columns.Add("PhoneNumber");
+        settings.Columns.Add(m => m.UserName);
+        settings.Columns.Add(m => m.Email);
+       
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "RoleName";
+            c.EditorProperties().ComboBox(p =>
+            {
+                //p.DataMember = "Roles";
+                p.TextField = "Name";
+                p.ValueField = "Name";
+                p.ValueType = typeof(string);
+                p.BindList(ViewData["roles"]);
+            });
+        });
+        //settings.Columns.Add(c =>
+        //{
+        //    c.FieldName = "Roles";
+        //    c.Caption = "Roles";            
+        //    c.UnboundType = DevExpress.Data.UnboundColumnType.Object;
+        //    c.EditorProperties().ComboBox(p =>
+        //    {
+        //        p.TextField = "Name";
+        //        p.ValueField = "Name";
+        //        p.ValueType = typeof(string);
+        //        p.BindList(ViewData["roles"]);
+        //    });
+        //});
     });
     if (ViewData["EditError"] != null)
     {

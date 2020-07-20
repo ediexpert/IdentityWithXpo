@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using DX.Data.Xpo.Identity;
@@ -99,4 +98,33 @@ namespace IdentityWithXpoLatest.Models
     //        return new ApplicationDbContext();
     //    }
     //}
+
+    public class ApplicationRole : XPIdentityRole
+    {
+        public ApplicationRole()
+        { }
+    }
+    [MapInheritance(MapInheritanceType.ParentTable)]
+    public class XpoApplicationRole : XpoDxRole
+    {
+        public XpoApplicationRole(Session session) : base(session)
+        {
+        }
+    }
+    public class ApplicationRoleMapper : XPRoleMapper<string, ApplicationRole, XpoApplicationRole>
+    {
+        public override Func<XpoApplicationRole, ApplicationRole> CreateModel => base.CreateModel;
+
+        public override XpoApplicationRole Assign(ApplicationRole source, XpoApplicationRole destination)
+        {
+            XpoApplicationRole result = base.Assign(source, destination);
+            return result;
+        }
+
+        public override string Map(string sourceField)
+        {
+            return base.Map(sourceField);
+        }
+    }
+
 }

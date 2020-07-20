@@ -1,6 +1,14 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.DataProcessing;
 using DevExpress.Web.Mvc;
 using DevExpress.Xpo;
+using DX.Data.Xpo.Identity;
+using IdentityWithXpoLatest.Models;
+using IdentityWithXpoLatest.Persistent;
+using IdentityWithXpoLatest.ViewModels;
+using IdentityWithXpoLatest.XPO;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,25 +17,44 @@ using System.Web.Mvc;
 
 namespace IdentityWithXpoLatest.Controllers
 {
-    public class UserController : BaseXpoController
+    public class UserController : BaseXpoController<Product>
     {
-        private static DX.Data.Xpo.XpoDatabase db;
-        private static UnitOfWork uow;
-        // GET: User
-        private void InitUnitOfwork()
+        private ApplicationUserManager _userManager;
+        public ApplicationUserManager UserManager
         {
-            if (db == null)
-                db = DomainObjects.ApplicationDbContext.Create();
-            if (uow == null)
-                uow = db.GetUnitOfWork();
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
         }
         public UserController()
         {
-            InitUnitOfwork();
+
         }
+        public UserController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        {
+            UserManager = userManager;
+        }
+        IEnumerable<UserViewModel> GetUsers()
+        {
+
+            return (from c in XpoSession.Query<XpoApplicationUser>().ToList()
+                    select new UserViewModel() { UserName = c.UserName, Email = c.Email}).ToList();
+        }
+        IEnumerable<RoleViewModel> GetRoles()
+        {
+
+            return (from c in XpoSession.Query<XpoApplicationRole>().ToList()
+                    select new RoleViewModel() { Name = c.Name }).ToList();
+        }
+
         public ActionResult Index()
         {
-            InitUnitOfwork();
+           
             return View();
         }
 
@@ -35,74 +62,89 @@ namespace IdentityWithXpoLatest.Controllers
 
         [ValidateInput(false)]
         public ActionResult GridViewPartial()
+        {           
+            ViewData["roles"] = GetRoles();
+            return PartialView("_GridViewPartial", GetUsers());
+        }
+        [HttpPost, ValidateInput(false)]
+        public ActionResult GridViewPartialUpdate([ModelBinder(typeof(DevExpressEditorsBinder))] UserViewModel model)
         {
-            InitUnitOfwork();
-            var model = new XPCollection<DomainObjects.XpoApplicationUser>(uow);
-            return PartialView("_GridViewPartial", model);
+            var appUser = UserManager.FindByEmail(model.Email);
+            IdentityResult result;
+            if (appUser == null)
+            {
+                result = CreateUser(new ApplicationUser { UserName = model.UserName, Email = model.Email }, model.RoleName);    
+            }
+            else
+            {
+                result = UpdateUser(appUser, model.RoleName);
+            }
+            if (!result.Succeeded)
+            {
+                ViewData["Errors"] = result.Errors;
+            }
+            return PartialView("_GridViewPartial", GetUsers());
+        }
+
+        private IdentityResult CreateUser(ApplicationUser appUser, string role)
+        {
+            var res = UserManager.Create(appUser);
+            if (!res.Succeeded)
+                return res;
+            return UserManager.AddToRole(appUser.Id, role);
+        }
+        private IdentityResult UpdateUser(ApplicationUser appUser, string role)
+        {
+            ApplicationUser user = UserManager.FindByEmail(appUser.Email);
+            if (user == null)
+                return CreateUser(appUser, role);
+            user.Email = appUser.Email;
+            user.UserName = appUser.UserName;
+            var result = UserManager.Update(user);
+            if (!result.Succeeded)
+                return result;
+            foreach (var r in user.Roles)
+            {
+                UserManager.RemoveFromRole(user.Id, r.Name);
+            }
+
+            return UpdateRole(user.Id, role);
+        }
+
+        private IdentityResult UpdateRole(string userId, string roleName)
+        {
+            var user = UserManager.FindById(userId);
+            RemovePreviousRoles(user);
+            //if role does not exist then add the role
+            XpoApplicationRole role = XpoSession.Query<XpoApplicationRole>()?.FirstOrDefault(x => x.Name == roleName);
+            if (role == null)
+            {
+                role = new XpoApplicationRole(XpoSession);
+                role.Name = roleName;
+                XpoSession.CommitChanges();
+            }
+                
+            return UserManager.AddToRole(user.Id, roleName);
+
+        }
+
+        private void RemovePreviousRoles(ApplicationUser user)
+        {
+            if (user.Roles.Count < 1)
+                return;
+
+            foreach (var role in user.Roles)
+            {
+                UserManager.RemoveFromRole(user.Id, role.Name);
+            }
         }
 
         [HttpPost, ValidateInput(false)]
-        public ActionResult GridViewPartialAddNew([ModelBinder(typeof(DevExpressEditorsBinder))] DX.Data.Xpo.Identity.XPIdentityUser item)
+        public ActionResult GridViewPartialDelete([ModelBinder(typeof(DevExpressEditorsBinder))] UserViewModel model)
         {
-            var model = new object[0];
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    // Insert here a code to insert the new item in your model
-                }
-                catch (Exception e)
-                {
-                    ViewData["EditError"] = e.Message;
-                }
-            }
-            else
-                ViewData["EditError"] = "Please, correct all errors.";
-            return PartialView("_GridViewPartial", model);
-        }
-        [HttpPost, ValidateInput(false)]
-        public ActionResult GridViewPartialUpdate([ModelBinder(typeof(DevExpressEditorsBinder))] DX.Data.Xpo.Identity.XPIdentityUser item)
-        {
-            var model = new object[0];
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    // Insert here a code to update the item in your model
-                }
-                catch (Exception e)
-                {
-                    ViewData["EditError"] = e.Message;
-                }
-            }
-            else
-                ViewData["EditError"] = "Please, correct all errors.";
-            return PartialView("_GridViewPartial", model);
-        }
-        [HttpPost, ValidateInput(false)]
-        public ActionResult GridViewPartialDelete(System.String ID)
-        {
-            InitUnitOfwork();
-            var model = new XPCollection<DomainObjects.XpoApplicationUser>(uow);
-            if (ID != null)
-            {
-                try
-                {
-                    var user = uow.FindObject<DomainObjects.XpoApplicationUser>(CriteriaOperator.Parse("[Id] == ?", ID));
-                    if (user != null)
-                    {
-                        uow.Delete(user);
-                        uow.CommitChanges();
-                    }
-
-                    // Insert here a code to delete the item from your model
-                }
-                catch (Exception e)
-                {
-                    ViewData["EditError"] = e.Message;
-                }
-            }
-            return PartialView("_GridViewPartial", model);
+            ApplicationUser user = UserManager.FindByEmail(model.Email);
+            UserManager.Delete(user);
+            return PartialView("_GridViewPartial", GetUsers());
         }
     }
 }
