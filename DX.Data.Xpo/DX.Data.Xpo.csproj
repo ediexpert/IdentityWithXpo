@@ -47,12 +47,13 @@
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DevExpress.Data" Version="19.2.7" />
-    <PackageReference Include="DevExpress.Xpo" Version="19.2.7" />    
+    <PackageReference Include="DevExpress.Data" Version="20.1.6" />
+    <PackageReference Include="DevExpress.Xpo" Version="20.1.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview9.19421.4" />    
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DX.Utils\DX.Utils.csproj" />

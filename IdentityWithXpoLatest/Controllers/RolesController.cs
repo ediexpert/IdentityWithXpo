@@ -27,7 +27,7 @@ namespace IdentityWithXpoLatest.Controllers
         IEnumerable<RoleViewModel> GetRoles()
         {
             return (from c in XpoSession.Query<XpoApplicationRole>().ToList()
-                    select new RoleViewModel() {ID = c.Id ,Name = c.Name }).ToList();
+                    select new RoleViewModel() {ID = c.Id ,Name = c.Name, NameUpper = c.NameUpper }).ToList();
         }
 
         void SaveRole(ApplicationRole applicationRole)
@@ -52,19 +52,19 @@ namespace IdentityWithXpoLatest.Controllers
         }
 
         [HttpPost, ValidateInput(false)]
-        public ActionResult GridViewPartialAddNew([ModelBinder(typeof(DevExpressEditorsBinder))] ApplicationRole role)
+        public ActionResult GridViewPartialAddNewOrUpdate([ModelBinder(typeof(DevExpressEditorsBinder))] RoleViewModel role)
         {
-            SaveRole(role);
+            var appRole = XpoSession.Query<XpoApplicationRole>().FirstOrDefault(x => x.NameUpper == role.Name.ToUpper());
+            if (appRole == null)
+                appRole = new XpoApplicationRole(XpoSession);
+            appRole.Name = role.Name;
+            XpoSession.CommitChanges();
+            
             return PartialView("_GridViewPartial", GetRoles());
         }
+        
         [HttpPost, ValidateInput(false)]
-        public ActionResult GridViewPartialUpdate([ModelBinder(typeof(DevExpressEditorsBinder))] ApplicationRole role)
-        {
-            SaveRole(role);
-            return PartialView("_GridViewPartial", GetRoles());
-        }
-        [HttpPost, ValidateInput(false)]
-        public ActionResult GridViewPartialDelete([ModelBinder(typeof(DevExpressEditorsBinder))] ApplicationRole role)
+        public ActionResult GridViewPartialDelete([ModelBinder(typeof(DevExpressEditorsBinder))] RoleViewModel role)
         {
             var appRole = XpoSession.GetObjectByKey<XpoApplicationRole>(role.ID);
             if(appRole != null)

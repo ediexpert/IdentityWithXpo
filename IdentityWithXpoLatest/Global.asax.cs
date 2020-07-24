@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using DevExpress.Xpo;
+using IdentityWithXpoLatest.XPO;
 
 namespace IdentityWithXpoLatest
 {
@@ -13,7 +14,8 @@ namespace IdentityWithXpoLatest
     {
         protected void Application_Start()
         {
-            XpoDefault.DataLayer = XpoHelper.GetDataLayer("DefaultConnection");
+            //XpoDefault.DataLayer = XpoHelper.GetDataLayer("DefaultConnection");
+            XpoConnectionHelper.InitiateDataLayer("DefaultConnection");
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

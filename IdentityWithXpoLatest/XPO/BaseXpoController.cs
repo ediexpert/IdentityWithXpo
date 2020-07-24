@@ -21,7 +21,7 @@ namespace IdentityWithXpoLatest.XPO
 
         protected virtual UnitOfWork CreateSession()
         {
-            return XpoHelper.GetNewUnitOfWork();
+            return XpoConnectionHelper.GetNewUnitOfWork();
         }
 
         bool Save(BaseViewModel<T> viewModel, bool delete)

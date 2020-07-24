@@ -10,6 +10,7 @@ namespace IdentityWithXpoLatest.ViewModels
     {
         public string ID { get; set; }
         public string Name { get; set; }
+        public string NameUpper { get; set; }
         public void GetData(XPIdentityRole model)
         {
             model.Name = Name;            

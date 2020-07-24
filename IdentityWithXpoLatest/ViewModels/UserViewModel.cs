@@ -11,6 +11,7 @@ namespace IdentityWithXpoLatest.ViewModels
         public string UserName { get; set; }
         public string Email { get; set; }
         public string RoleName { get; set; }
+        public List<RoleViewModel> Roles { get; set; }
         public override void GetData(XpoApplicationUser model)
         {
             model.UserName = UserName;

@@ -5,8 +5,8 @@
         settings.Name = "GridView";
         settings.CallbackRouteValues = new { Controller = "Roles", Action = "GridViewPartial" };
 
-        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Roles", Action = "GridViewPartialAddNew" };
-        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Roles", Action = "GridViewPartialUpdate" };
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Roles", Action = "GridViewPartialAddNewOrUpdate" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Roles", Action = "GridViewPartialAddNewOrUpdate" };
         settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Roles", Action = "GridViewPartialDelete" };
         settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
         settings.SettingsBehavior.ConfirmDelete = true;
@@ -31,6 +31,7 @@
 
         settings.Columns.Add(m => m.ID).EditFormSettings.Visible = DefaultBoolean.False;
         settings.Columns.Add(m => m.Name);
+        settings.Columns.Add(m => m.NameUpper).EditFormSettings.Visible = DefaultBoolean.False;
     });
     if (ViewData["EditError"] != null)
     {

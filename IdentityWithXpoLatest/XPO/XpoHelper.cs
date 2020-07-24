@@ -45,7 +45,7 @@ public static class XpoHelper
         string conn = ConfigurationManager.ConnectionStrings[ConnectionStringName].ConnectionString;
         conn = XpoDefault.GetConnectionPoolString(conn);
         XPDictionary dict = new ReflectionDictionary();
-        IDataStore store = XpoDefault.GetConnectionProvider(conn, AutoCreateOption.SchemaAlreadyExists);
+        IDataStore store = XpoDefault.GetConnectionProvider(conn, AutoCreateOption.DatabaseAndSchema);
         dict.GetDataStoreSchema(System.Reflection.Assembly.GetExecutingAssembly());
         IDataLayer dl = new ThreadSafeDataLayer(dict, store);
         return dl;

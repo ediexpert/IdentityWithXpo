@@ -30,18 +30,50 @@
 
         settings.Columns.Add(m => m.UserName);
         settings.Columns.Add(m => m.Email);
-       
+        //settings.Columns.Add(m => m.Roles, c => {
+        //    c.Caption = "Role List";
+        //    c.ColumnType = MVCxGridViewColumnType.TextBox;
+        //    c.SetDataItemTemplateContent(content =>
+        //    {
+        //        string selectedRoles = (string)DataBinder.Eval(content.DataItem, "Email");
+        //        //string userId = (string)DataBinder.Eval(content.DataItem, "Email");
+
+        //        Html.DevExpress().TokenBox(tbSettings =>
+        //        {
+        //            tbSettings.Name = "RoleNames" + selectedRoles;
+        //            tbSettings.Properties.ItemValueType = typeof(string);
+        //            tbSettings.Properties.DataSource = ViewData["roles"];
+        //            //foreach (IdentityWithXpoLatest.ViewModels.RoleViewModel item in ViewData["roles"] as List<IdentityWithXpoLatest.ViewModels.RoleViewModel>)
+        //            //{
+        //            //    tbSettings.Properties.Items.Add(item.Name).Selected = selectedRoles.Contains(item.Name);
+        //            //}
+        //            //tbSettings.Properties.TextField = "Name";
+        //            //tbSettings.Properties.ValueField = "Id";
+        //        }).BindList(ViewData["roles"]).Render();
+        //    });
+        //});
+
         settings.Columns.Add(c =>
         {
             c.FieldName = "RoleName";
-            c.EditorProperties().ComboBox(p =>
-            {
-                //p.DataMember = "Roles";
-                p.TextField = "Name";
-                p.ValueField = "Name";
-                p.ValueType = typeof(string);
-                p.BindList(ViewData["roles"]);
+            c.EditorProperties().TokenBox(tb => {
+                tb.BindList(ViewData["roles"]);
+                tb.ValueField = "Name";
+                tb.TextField = "Name";
+                string selectedRoles = "admin";
+                foreach (var item in ViewData["roles"] as List<IdentityWithXpoLatest.ViewModels.RoleViewModel>)
+                {
+                    tb.Items.Add(item.Name).Selected = selectedRoles.Contains(item.Name);
+                }
             });
+            //c.EditorProperties().ComboBox(p =>
+            //{
+            //    //p.DataMember = "Roles";
+            //    p.TextField = "Name";
+            //    p.ValueField = "Name";
+            //    p.ValueType = typeof(string);
+            //    p.BindList(ViewData["roles"]);
+            //});
         });
         //settings.Columns.Add(c =>
         //{
